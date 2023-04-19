@@ -11,15 +11,15 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up():void   
+    public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string("title", 100);
             $table->text("excerpt");
             $table->text("content");
-            $table->text("image");
-            $table->foreignId("author_Id")->constrained("users");
+            $table->string("image");
+            $table->foreignId("author_id")->constrained("users");
             $table->timestamps();
         });
     }
